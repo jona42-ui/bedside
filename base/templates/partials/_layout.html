@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en">
+<head>
+  <title>{% block title %} {% endblock title %}Bedside Nursing</title>
+  {% include 'partials/_head.html' %}
+
+
+  {% include 'partials/_stylesheets.html' %}
+
+  {% block extrastylesheet %} {% endblock extrastylesheet %}
+</head>
+<body>
+{% include 'partials/_navbar.html' %}
+
+    {% block body %}
+
+
+    {% endblock body %}
+
+    {% include 'partials/_footer.html' %}
+    {% include "partials/_scripts.html" %}
+    {% block scripts %} {% endblock scripts %}
+</body>
+</html>

@@ -1,0 +1,79 @@
+{% extends 'partials/_layout.html' %}
+{% load static %}
+{% load webp_converter %}
+
+{% block body %}
+
+<section id="contact" class="get-started pt-11">
+    <div class="container">
+      <div class="row text-center">
+        <h1 class="display-3 fw-bold textcapitalize pt-5 text-white">Let Us Care, Dear</h1>
+        <hr style="height: 3px;width: 100px;color: purple;" class="mx-auto">
+        <p class="lh-lg tex text-white">
+          Fill out the form below for a quick and urgent response.
+        </p>
+      </div>
+
+      <!--START THE CTA INFO-->
+
+
+      <div class="row text-white">
+        <div class="col-12 col-lg-6 gradient shadow p-3">
+          <div class="cta-info w-100">
+          <h4 class="display-4 fw-bold d-block">
+             100%
+              Satisfaction
+             Guaranteed</h4>
+          <p class="lh-lg">
+          Our professionals are ready for a call to action with insatant reply and attendence.
+          </p>
+          <h3 class="display-3--brief">What will be the next step?</h3>
+          <ui class="cta-info__list">
+            <li>We'll travel to your place</li>
+            <li>we'll discuss costs together</li>
+            <li>Let's start the discussion</li>
+          </ui>
+         </div>
+      </div>
+        <div class="col-12 col-lg-6 bg-white shadow p-3">
+          <div class="form w-100 p-2 text-dark">
+           <h3 class="display-3 mb-5">Start Your Home Based Care Here</h3>
+            <form action="#" method="post" class="row">
+              {% include 'partials/_form_errors.html' %}
+              {% include 'partials/_messages.html' %}
+              <div class="col-lg-6 col-md-6 mb-3">
+                <input type="text" placeholder="First Name" name="first_name" id="first_name" class="shadow form-control form-control-lg">
+              </div>
+                <div class="col-lg-6 col-md-6 mb-3">
+                  <input type="text" placeholder="Last Name" id="last-name" name="last_name" class="shadow form-control form-control-lg">
+                </div>
+                <div class="col-lg-12 mb-3">
+                  <input type="number" placeholder="phone number" id="phone" name="phone" class="shadow form-control form-control-lg">
+                </div>
+                  <div class="col-lg-12 mb-3">
+                    <input type="email" placeholder="email address" id="email" name="email" class="shadow form-control form-control-lg">
+                  </div>
+                    <div class="col-lg-12 mb-3 ">
+                      <textarea name="message" placeholder="Message" id="message" rows="8" class="shadow form-control">
+
+                      </textarea>
+
+                    </div>
+                      <div class="text-center d-grid mb-1">
+                        <input type="hidden" name="action" value="sendEmail">
+                       <button id="submit" type="submit" class="btn btn-primary text-white rounded-pill pt-3 pb-3">
+                         submit
+                         <i class="fas fa-paper-plane"></i>
+                       </button>
+                      </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</section>
+
+
+{% endblock body %}

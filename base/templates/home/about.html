@@ -1,0 +1,58 @@
+{% extends 'partials/_layout.html' %}
+{% load static %}
+{% block body %}
+    <!-- START THE CONTENT FOR THE SERVICES  -->
+       <div class="container" id="home-based">
+         <!-- STRAT more about us/profile  -->
+         <div class="row">
+           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-2">
+             <div class="services__content">
+               <i class="d-block fas fa-home"></i>
+               <h3 class="display-3--title mt-3">Providing Quick And Personalised Professional Home-based Services</h3>
+               <p class="lh-lg">Ever since the pandemic started, as health facilities are constrained due to the overwhelming numbers and the risk of contracting contagious diseases, the Ministry of Health(MOH) has provided an option that Home-Based care
+                   is the safest method to care for all patients and all vulnerables(Above 60years). In periods where safety is key and our communities lack Affordable High Quality Home-Based Care, we come as an experirnced team to render the due service.
+                   It is on this premise that our team & expertise has consistently grown and assisted hundreds of seniors & home-based patients over the years to access quality health care in with respect and dignity. To this day, our team focuses on promoting
+                    the health and well-being of patients and families by providing expert, cost-effective care in their homes and communities.
+               </p>
+               <button type="button" class="rounded-pill btn-rounded border-primary">Let's care
+                 <span>
+                    <a href="{% url 'base:contact' %}"> <i class="fas fa-arrow-right"></i></a>
+                 </span>
+               </button> </div>
+           </div>
+           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
+             <div class="services__pic">
+               <img src="{% static 'images/services/service1.jpeg' %}" alt="home care illustartion" class="img-fluid ">
+               <img src="{% static 'images/services/service1.jpeg' %}" alt="home care illustartion" class="img-fluid ">
+               <img src="{% static 'images/services/service1.jpeg' %}" alt="home care illustartion" class="img-fluid ">
+               <img src="{% static 'images/services/service1.jpeg' %}" alt="home care illustartion" class="img-fluid ">
+               <img src="{% static 'images/services/service1.jpeg' %}" alt="home care illustartion" class="img-fluid ">
+             </div>
+           </div>
+         </div>
+         <!-- START our mission  -->
+         <div class="row">
+           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-start">
+             <div class="services__pic">
+               <img src="{% static 'images/services/service2.jpeg' %}" alt="drug administaration illustartion" class="img-fluid ">
+             </div>
+           </div>
+
+           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
+             <div class="services__content">
+
+               <h3 class="display-3--title mt-1">Our Mission</h3>
+               <p class="lh-lg">To provide  Timely, Professional Bed-side nursing care
+                   that is acceptable to all our clients and in a flexible manner.
+
+               </p>
+               <button type="button" class="rounded-pill btn-rounded border-primary">See our Services
+                 <span>
+                    <a href="{% url 'base:index' %}#services"> <i class="fas fa-arrow-right"></i></a>
+                 </span>
+               </button>
+             </div>
+           </div>
+         </div>
+
+{% endblock body %}
