@@ -27,8 +27,27 @@
                     </div>
                   <!-- START CONTENT FOR THE IMAGE  -->
                   <div class="col-md-6 intros">
-                      <div class="bacground">
-                          <img src="{% static 'images/beside.jpg' %}" alt="intro image" class="img-fluid">
+                      <div class="bacground text-center data-aos="fade-right"">
+                          {% comment %} <img src="{% static 'images/beside.jpg' %}" alt="intro image" class="img-fluid"> {% endcomment %}
+                          <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="{% static 'images/beside.jpg' %}" alt="intro image" class="img-fluid">
+                              </div>
+                              <div class="carousel-item">
+                                <img class="d-block w-100 img-fluid" src="{% static 'images/index.jpeg' %}" alt="First slide">
+                              </div>
+                              <div class="carousel-item">
+                                <img class="d-block w-100 img-fluid" src="{% static 'images/index2.jpeg' %}" alt="Second slide">
+                              </div>
+                              <div class="carousel-item">
+                                <img class="d-block w-100" src="{% static 'images/index3.jpeg' %}" alt="Third slide">
+                              </div>
+                              <div class="carousel-item">
+                                <img class="d-block w-100" src="{% static 'images/index4.jpeg' %}" alt="fourth slide">
+                              </div>
+                            </div>
+                          </div>
                       </div>
                   </div>
 
@@ -88,16 +107,15 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-center">
               <div class="services__pic">
-                <img src="{% static 'images/services/service1.jpeg' %}" alt="home care illustartion" class="img-fluid ">
-                <img src="{% static 'images/services/service111.jpeg' %}" alt="home care illustartion" class="img-fluid ">
-
+                <img src="{% static 'images/services/service1.jpeg' %}" alt="home care illustartion" class="img-fluid">
+                <img src="{% static 'images/services/services111.jpeg' %}" alt="home care illustartion" class="img-fluid">
               </div>
           </div>
           <!-- START THE DRUG ADMINISTRATION CONTENT  -->
           <div class="row" id="drugadmin">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-start">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-center">
               <div class="services__pic">
-                <img src="{% static 'images/services/service2.jpeg' %}" alt="drug administaration illustartion" class="img-fluid ">
+                <img src="{% static 'images/services/service2.png' %}" alt="drug administaration illustartion" class="img-fluid ">
               </div>
             </div>
 
@@ -133,18 +151,19 @@
                 </button>
               </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-center">
               <div class="services__pic">
                 <img src="{% static 'images/services/service3.jpeg' %}" alt="patient sanitation illustartion" class="img-fluid">
+                <img src="{% static 'images/services/service33.jpeg' %}" alt="patient sanitation illustartion" class="img-fluid">
               </div>
               </div>
             </div>
           </div>
           <!-- START THE FIRST AID CONTENT  -->
           <div class="row" id="firstaid">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-start ">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-center ">
               <div class="services__pic pl-3">
-                <img src="{% static 'images/services/service4.jpeg' %}" alt="first aid illustartion" class="img-fluid">
+                <img src="{% static 'images/services/service44.jpeg' %}" alt="first aid illustartion" class="img-fluid">
               </div>
             </div>
 
@@ -188,7 +207,7 @@
                   <div class="testimonials__card">
                     <p class="lh-lg">
                       <i class="fas fa-quote-left"></i>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores nam quo quibusdam cum. Mollitia rem eaque sapiente tenetur.
+                      You are showing expertise and profession in your work, keep up the good work.
                       <i class="fas fa-quote-right"></i>
                       <div class="ratings">
                         <i class="fas fa-star"></i>
@@ -203,13 +222,13 @@
                   </div>
                   <!-- client picture  -->
                   <div class="testimonials__picture">
-                    <img src="{% static 'images/clients/client1.jpeg' %}" alt="client-1 picture" class=" rounded-circle img-fluid">
+                    <img src="{% static 'images/clients/blog.png' %}" alt="client-1 picture" class=" rounded-circle img-fluid">
 
                   </div>
                   <!-- client name and role  -->
-                  <div class="testimonials__name">
+                  <div class="testimonials__name pt-3">
                     <h3>ERIC MURUNGI</h3>
-                    <p class="fw-light">CRITICAL MEDICAL CARE EXPERT</p>
+                    <p class="fw-light">Client,CRITICAL MEDICAL CARE EXPERT</p>
 
                   </div>
                 </div>
@@ -219,7 +238,7 @@
                   <div class="testimonials__card">
                     <p class="lh-lg">
                       <i class="fas fa-quote-left"></i>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores nam quo quibusdam cum. Mollitia rem eaque sapiente tenetur.
+                      Thanks for such tremendous and smart services you are offering
                       <i class="fas fa-quote-right"></i>
                       <div class="ratings">
                         <i class="fas fa-star"></i>
@@ -233,14 +252,14 @@
 
                   </div>
                   <!-- client picture  -->
-                  <div class="testimonials__picture">
-                    <img src="{% static 'images/clients/client1.jpeg' %}" alt="client-2 picture" class=" rounded-circle img-fluid">
+                  <div class="testimonials__picture pt-3">
+                    <img src="{% static 'images/clients/client1.jpg' %}" alt="client-2 picture" class=" rounded-circle img-fluid mb-4">
 
                   </div>
                   <!-- client name and role  -->
-                  <div class="testimonials__name">
-                    <h3>JOAKIM</h3>
-                    <p class="fw-light">CO-FOUNDER BEDSIDE NURSING</p>
+                  <div class="testimonials__name pb-5">
+                    <h3>THEMBO    JONATHAN</h3>
+                    <p class="fw-light">Client,ENGINEER</p>
 
                   </div>
                 </div>
@@ -250,7 +269,7 @@
                   <div class="testimonials__card">
                     <p class="lh-lg">
                       <i class="fas fa-quote-left"></i>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores nam quo quibusdam cum. Mollitia rem eaque sapiente tenetur.
+                      Your service is exceptional and we hope to hire you as private nurses.
                       <i class="fas fa-quote-right"></i>
                       <div class="ratings">
                         <i class="fas fa-star"></i>
@@ -270,8 +289,8 @@
                   </div>
                   <!-- client name and role  -->
                   <div class="testimonials__name">
-                    <h3>BRIAN</h3>
-                    <p class="fw-light">CO-FOUNDER BEDSIDE NURSING </p>
+                    <h3>MRS.ESTHER</h3>
+                    <p class="fw-light">Client</p>
 
                   </div>
                 </div>
