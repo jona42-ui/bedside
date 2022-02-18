@@ -9,7 +9,7 @@ SECRET_KEY = 'i-qr8xb2bh+ym0r4!v@kz1*+(y7+jf-n-&vt=zwkv*gf^1_rg!'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', "127.0.0.1"]
+ALLOWED_HOSTS = [arisebedside.herokuapp.com]
 
 # Application definition
 
