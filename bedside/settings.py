@@ -158,8 +158,8 @@ EMAIL_USE_TLS = True
 # EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 # django_heroku.settings(locals())
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 WHITENOISE_AUTOREFRESH = True
 #WHITENOISE_USE_FINDERS = True
 #WHITENOISE_MANIFEST_STRICT = False
