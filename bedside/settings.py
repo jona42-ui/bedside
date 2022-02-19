@@ -32,6 +32,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -116,15 +117,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 # STATIC AND MEDIA FILE SETTINGS
-STATIC_URL = '/assets/'
+#STATIC_URL = '/assets/'
+STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+#STATICFILES_DIRS = [
+ #   os.path.join(BASE_DIR, 'bedside/assets'),
+#]
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'bedside/assets'),
+    os.path.join(BASE_DIR, 'static'),
 ]
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'bedside/media')
 
@@ -151,8 +158,8 @@ EMAIL_USE_TLS = True
 # EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 # django_heroku.settings(locals())
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 WHITENOISE_AUTOREFRESH = True
 #WHITENOISE_USE_FINDERS = True
 #WHITENOISE_MANIFEST_STRICT = False
