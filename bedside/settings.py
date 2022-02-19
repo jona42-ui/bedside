@@ -117,20 +117,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 # STATIC AND MEDIA FILE SETTINGS
-#STATIC_URL = '/assets/'
-STATIC_URL = '/static/'
+STATIC_URL = '/assets/'
+#STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 
-#STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-#STATICFILES_DIRS = [
- #   os.path.join(BASE_DIR, 'bedside/assets'),
-#]
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+   os.path.join(BASE_DIR, 'bedside/assets'),
 ]
+#STATICFILES_DIRS = [
+    #os.path.join(BASE_DIR, 'static'),
+#]
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'bedside/media')
