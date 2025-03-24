@@ -1,15 +1,16 @@
-
 import os
 from decouple import config
 import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = 'i-qr8xb2bh+ym0r4!v@kz1*+(y7+jf-n-&vt=zwkv*gf^1_rg!'
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'i-qr8xb2bh+ym0r4!v@kz1*+(y7+jf-n-&vt=zwkv*gf^1_rg!')
 
-DEBUG = False
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = ['arisebedside.herokuapp.com','www.arisebedside.herokuapp.com']
+ALLOWED_HOSTS = ['bedside.onrender.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -74,6 +75,11 @@ DATABASES = {
     }
 }
 
+# Update database configuration from DATABASE_URL if available
+if 'DATABASE_URL' in os.environ:
+    import dj_database_url
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -117,24 +123,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 # STATIC AND MEDIA FILE SETTINGS
-STATIC_URL = '/assets/'
-#STATIC_URL = '/static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/media/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, 'bedside/assets'),
-]
-#STATICFILES_DIRS = [
-    #os.path.join(BASE_DIR, 'static'),
-#]
-
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'bedside/media')
 
+# Simplified static file serving
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 INSTALLED_APPS += [
     'debug_toolbar',
@@ -158,10 +155,5 @@ EMAIL_USE_TLS = True
 # EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 # django_heroku.settings(locals())
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 WHITENOISE_AUTOREFRESH = True
-#WHITENOISE_USE_FINDERS = True
-#WHITENOISE_MANIFEST_STRICT = False
-#WHITENOISE_ALLOW_ALL_ORIGINS = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
