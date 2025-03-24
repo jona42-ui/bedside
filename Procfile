@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn bedside.wsgi:application
+web: gunicorn --chdir bedside bedside.wsgi:application
