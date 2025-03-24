@@ -3,7 +3,7 @@ services:
     name: bedside
     runtime: python
     buildCommand: ./build.sh
-    startCommand: gunicorn --chdir bedside bedside.wsgi:application
+    startCommand: ./start.sh
     envVars:
       - key: PYTHON_VERSION
         value: "3.9.0"
