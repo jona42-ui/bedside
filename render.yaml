@@ -23,6 +23,12 @@ services:
         value: ".onrender.com"
       - key: DJANGO_SETTINGS_MODULE
         value: "bedside.settings"
+      - key: STATIC_URL
+        value: "/static/"
+      - key: STATIC_ROOT
+        value: "staticfiles"
+      - key: PYTHONPATH
+        value: "/opt/render/project/src"
 
 databases:
   - name: bedside_db
