@@ -2,7 +2,7 @@ services:
   - type: web
     name: bedside
     runtime: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: ./build.sh
     startCommand: gunicorn bedside.wsgi:application
     envVars:
       - key: PYTHON_VERSION
@@ -31,6 +31,10 @@ services:
         value: "/static/"
       - key: MEDIA_URL
         value: "/media/"
+      - key: DJANGO_SETTINGS_MODULE
+        value: "bedside.settings"
+      - key: PYTHONPATH
+        value: "/opt/render/project/src"
 
 databases:
   - name: bedside_db
