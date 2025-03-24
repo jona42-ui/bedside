@@ -8,7 +8,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bedside.settings')
 
 # Import Django WSGI application
-from bedside.wsgi import application as app
+from bedside.wsgi import application
 
-# Make the application available at the module level
-application = app
+# Make the application available as 'app' for Render
+app = application
